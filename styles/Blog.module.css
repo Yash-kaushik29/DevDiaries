@@ -1,0 +1,60 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  max-width: 400px;
+}
+
+.blogItem {
+  font-family: sans-serif;
+  padding: 1rem 0;
+  margin: 0 10%;
+}
+
+.blogItem h3 {
+  cursor: pointer;
+  font-size: 18px;
+  padding: 0.6rem 0;
+}
+
+.blogItem p {
+  font-size: 15px;
+}
+
+.button {
+  color: #000;
+  background-color: #fff;
+  padding: 3px 5px;
+  font-weight: bold;
+  cursor: pointer;
+  border: 1px solid black;
+  border-radius: 20px;
+}
+
+@media screen and (min-width: 600px) {
+  .main {
+    max-width: 550px;
+  }
+  
+  .blogItem h3 {
+    font-size: 18px;
+  }
+
+  .blogItem p {
+    font-size: 15px;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .main {
+    max-width: 70vw;
+  }
+
+  .blogItem h3 {
+    font-size: 20px;
+  }
+
+  .blogItem p {
+    font-size: 16px;
+  }
+}
