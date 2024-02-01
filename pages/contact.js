@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { enqueueSnackbar } from "notistack";
 import styles from "../styles/Contact.module.css";
+import { BASE_API_URL } from "@/utils/constant";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -21,7 +22,7 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    fetch("https://dev-diaries-rho.vercel.app/api/postcontact", {
+    fetch(`${BASE_API_URL}/api/postcontact`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

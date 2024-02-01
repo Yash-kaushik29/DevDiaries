@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "@/styles/Home.module.css";
 import { useEffect, useState } from "react";
+import { BASE_API_URL } from "@/utils/constant";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -13,7 +14,7 @@ export default function Home() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("https://dev-diaries-rho.vercel.app/api/blogs");
+        const response = await fetch(`${BASE_API_URL}/api/blogs`);
         let data = await response.json();
         data = data.slice(0, 5);
         setBlogs(data);

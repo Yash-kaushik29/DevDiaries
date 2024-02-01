@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import styles from "../styles/Blog.module.css";
+import { BASE_API_URL } from "@/utils/constant";
 
 const Blog = (props) => {
   const [blogs, setBlogs] = useState(props.allBlogs);
@@ -25,7 +26,7 @@ const Blog = (props) => {
 };
 
 export async function getServerSideProps(context) {
-  let data = await fetch("https://dev-diaries-rho.vercel.app/api/blogs");
+  let data = await fetch(`${BASE_API_URL}/api/blogs`);
   let allBlogs = await data.json();
 
   return {

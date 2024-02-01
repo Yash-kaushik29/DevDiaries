@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import styles from "../../styles/BlogPost.module.css";
+import { BASE_API_URL } from "@/utils/constant";
 
 const Slug = (props) => {
   const [blog, setBlog] = useState(props.myBlog);
@@ -22,7 +23,7 @@ export async function getServerSideProps(context) {
 
   const { slug } = context.query;
 
-  let data = await fetch(`https://dev-diaries-rho.vercel.app/api/getBlog?slug=${slug}`);
+  let data = await fetch(`${BASE_API_URL}/api/getBlog?slug=${slug}`);
   let myBlog = await data.json();
   
   return {
