@@ -21,7 +21,7 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    fetch("http://localhost:3000/api/postcontact", {
+    fetch("https://dev-diaries-rho.vercel.app/api/postcontact", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

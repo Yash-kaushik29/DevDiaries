@@ -22,7 +22,7 @@ export async function getServerSideProps(context) {
 
   const { slug } = context.query;
 
-  let data = await fetch(`http://localhost:3000/api/getBlog?slug=${slug}`);
+  let data = await fetch(`https://dev-diaries-rho.vercel.app/api/getBlog?slug=${slug}`);
   let myBlog = await data.json();
   
   return {
