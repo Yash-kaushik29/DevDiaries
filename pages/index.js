@@ -13,7 +13,7 @@ export default function Home() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://localhost:3000/api/blogs");
+        const response = await fetch("https://dev-diaries-rho.vercel.app/api/blogs");
         let data = await response.json();
         data = data.slice(0, 5);
         setBlogs(data);
